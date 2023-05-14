@@ -43,5 +43,15 @@ class DeprecateConfigurationInFavorOfCustomServiceAttribute extends DocBlockArch
 
     public function setMetaData(DOMElement $meta) : void {
         AddAuthorMetadata::add(Author::charlesSprayberry(), $meta);
+
+        $dom = $meta->ownerDocument;
+
+        $deprecationNode = $dom->createElement('deprecation');
+        $sinceNode = $dom->createElement('since', '2.1.0');
+        $removeNode = $dom ->createElement('scheduledForRemoval', '3.0.0');
+
+        $deprecationNode->append($sinceNode, $removeNode);
+
+        $meta->append($deprecationNode);
     }
 }
