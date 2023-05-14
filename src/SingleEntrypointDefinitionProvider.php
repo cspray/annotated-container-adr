@@ -5,6 +5,7 @@ namespace Cspray\AnnotatedContainer\ArchitecturalDecisionRecords;
 use Attribute;
 use Cspray\ArchitecturalDecision\DecisionStatus;
 use Cspray\ArchitecturalDecision\DocBlockArchitecturalDecision;
+use DOMElement;
 
 /**
  * # Allow Single Entrypoint for DefinitionProvider
@@ -36,5 +37,9 @@ final class SingleEntrypointDefinitionProvider extends DocBlockArchitecturalDeci
 
     public function getStatus() : DecisionStatus {
         return DecisionStatus::Accepted;
+    }
+
+    public function setMetaData(DOMElement $meta) : void {
+        AddAuthorMetadata::add(Author::charlesSprayberry(), $meta);
     }
 }

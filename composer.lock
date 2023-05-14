@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "effe21b3f3ae95008aafdc7789132201",
+    "content-hash": "218af3f3f6cfdce5e9e48a67d2f56edb",
     "packages": [
         {
             "name": "cspray/annotated-target",
@@ -199,7 +199,8 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": "^8.1"
+        "php": "^8.1",
+        "ext-dom": "*"
     },
     "platform-dev": [],
     "plugin-api-version": "2.2.0"

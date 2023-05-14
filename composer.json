@@ -3,6 +3,7 @@
   "description": "Architectural Decision Records for Annotated Container and its associated libraries.",
   "require": {
     "php": "^8.1",
+    "ext-dom": "*",
     "cspray/architectural-decision": "^1.2"
   },
   "autoload": {

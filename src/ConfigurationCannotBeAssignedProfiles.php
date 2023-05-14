@@ -5,6 +5,7 @@ namespace Cspray\AnnotatedContainer\ArchitecturalDecisionRecords;
 use Attribute;
 use Cspray\ArchitecturalDecision\DecisionStatus;
 use Cspray\ArchitecturalDecision\DocBlockArchitecturalDecision;
+use DOMElement;
 
 /**
  * # Configuration instances cannot be assigned profiles
@@ -29,6 +30,16 @@ final class ConfigurationCannotBeAssignedProfiles extends DocBlockArchitecturalD
     }
 
     public function getStatus() : DecisionStatus {
-        return DecisionStatus::Accepted;
+        return DecisionStatus::Superseded;
+    }
+
+    public function setMetaData(DOMElement $meta) : void {
+        $dom = $meta->ownerDocument;
+
+        $supersededNode = $dom->createElement('supersededBy');
+        $supersededNode->textContent = 'DeprecateConfigurationInFavorOfCustomServiceAttribute';
+
+        AddAuthorMetadata::add(Author::charlesSprayberry(), $meta);
+        $meta->append($supersededNode);
     }
 }
