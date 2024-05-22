@@ -31,7 +31,7 @@ use DOMElement;
  * functionality, you should implement your own custom ServiceAttribute.
  */
 #[Attribute(Attribute::TARGET_CLASS)]
-class DeprecateConfigurationInFavorOfCustomServiceAttribute extends DocBlockArchitecturalDecision {
+final class DeprecateConfigurationInFavorOfCustomServiceAttribute extends DocBlockArchitecturalDecision {
 
     public function getDate() : string {
         return '2023-05-14';
@@ -43,15 +43,6 @@ class DeprecateConfigurationInFavorOfCustomServiceAttribute extends DocBlockArch
 
     public function setMetaData(DOMElement $meta) : void {
         AddAuthorMetadata::add(Author::charlesSprayberry(), $meta);
-
-        $dom = $meta->ownerDocument;
-
-        $deprecationNode = $dom->createElement('deprecation');
-        $sinceNode = $dom->createElement('since', '2.1.0');
-        $removeNode = $dom ->createElement('scheduledForRemoval', '3.0.0');
-
-        $deprecationNode->append($sinceNode, $removeNode);
-
-        $meta->append($deprecationNode);
+        AddDeprecationMetadata::add('2.1.0', '3.0.0', $meta);
     }
 }
