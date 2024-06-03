@@ -4,25 +4,25 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f8134fece07fccd419c20a5656f75f6a",
+    "content-hash": "ef5730bd5510becec416f045c3c70624",
     "packages": [
         {
             "name": "cspray/annotated-target",
-            "version": "v0.3.0",
+            "version": "v1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cspray/annotated-target.git",
-                "reference": "044626740f7c70908e47b14afd83d7f6449afa0c"
+                "reference": "fdb18678b9f660e2d109e7944b868db29c7ba2fd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cspray/annotated-target/zipball/044626740f7c70908e47b14afd83d7f6449afa0c",
-                "reference": "044626740f7c70908e47b14afd83d7f6449afa0c",
+                "url": "https://api.github.com/repos/cspray/annotated-target/zipball/fdb18678b9f660e2d109e7944b868db29c7ba2fd",
+                "reference": "fdb18678b9f660e2d109e7944b868db29c7ba2fd",
                 "shasum": ""
             },
             "require": {
-                "cspray/typiphy": "^0.2.0",
-                "nikic/php-parser": "^v4.14",
+                "cspray/typiphy": "^0.3",
+                "nikic/php-parser": "^v4.18 || ^5.0",
                 "php": "^8.1"
             },
             "require-dev": {
@@ -52,26 +52,26 @@
             "description": "A PHP 8 library for statically parsing Attributes using PHP-Parser.",
             "support": {
                 "issues": "https://github.com/cspray/annotated-target/issues",
-                "source": "https://github.com/cspray/annotated-target/tree/v0.3.0"
+                "source": "https://github.com/cspray/annotated-target/tree/v1.1.0"
             },
-            "time": "2023-05-13T13:41:29+00:00"
+            "time": "2024-06-03T21:11:23+00:00"
         },
         {
             "name": "cspray/architectural-decision",
-            "version": "v1.3.0",
+            "version": "v1.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cspray/architectural-decision.git",
-                "reference": "972339dcc89d3e559e808bef63c8052cffdd89cb"
+                "reference": "6b10529def23faf30da88c74d5a5e78d4e315c0d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cspray/architectural-decision/zipball/972339dcc89d3e559e808bef63c8052cffdd89cb",
-                "reference": "972339dcc89d3e559e808bef63c8052cffdd89cb",
+                "url": "https://api.github.com/repos/cspray/architectural-decision/zipball/6b10529def23faf30da88c74d5a5e78d4e315c0d",
+                "reference": "6b10529def23faf30da88c74d5a5e78d4e315c0d",
                 "shasum": ""
             },
             "require": {
-                "cspray/annotated-target": "^0.3",
+                "cspray/annotated-target": "^1.1",
                 "ext-dom": "*",
                 "php": "^8.1"
             },
@@ -79,6 +79,9 @@
                 "cspray/phinal": "^2.0",
                 "mikey179/vfsstream": "^1.6",
                 "phpunit/phpunit": "^10.1",
+                "symfony/console": "^6.4",
+                "symfony/filesystem": "^6.4",
+                "symfony/string": "^6.4",
                 "vimeo/psalm": "^5.11"
             },
             "bin": [
@@ -97,22 +100,22 @@
             "description": "A library to keep track of architectural decisions with PHP annotations.",
             "support": {
                 "issues": "https://github.com/cspray/architectural-decision/issues",
-                "source": "https://github.com/cspray/architectural-decision/tree/v1.3.0"
+                "source": "https://github.com/cspray/architectural-decision/tree/v1.4.0"
             },
-            "time": "2023-05-14T14:26:45+00:00"
+            "time": "2024-06-03T22:02:06+00:00"
         },
         {
             "name": "cspray/typiphy",
-            "version": "0.2.0",
+            "version": "0.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cspray/typiphy.git",
-                "reference": "f9823886e66be513a485d1b2a1fec4ad8c103f7e"
+                "reference": "b0bc06525cc796c4cb5abaf0d1bac472579271d5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cspray/typiphy/zipball/f9823886e66be513a485d1b2a1fec4ad8c103f7e",
-                "reference": "f9823886e66be513a485d1b2a1fec4ad8c103f7e",
+                "url": "https://api.github.com/repos/cspray/typiphy/zipball/b0bc06525cc796c4cb5abaf0d1bac472579271d5",
+                "reference": "b0bc06525cc796c4cb5abaf0d1bac472579271d5",
                 "shasum": ""
             },
             "require-dev": {
@@ -131,31 +134,33 @@
             "description": "A small library of value objects and functions for working with PHP's types.",
             "support": {
                 "issues": "https://github.com/cspray/typiphy/issues",
-                "source": "https://github.com/cspray/typiphy/tree/0.2.0"
+                "source": "https://github.com/cspray/typiphy/tree/0.3.0"
             },
-            "time": "2022-04-26T12:38:08+00:00"
+            "time": "2022-08-05T01:44:30+00:00"
         },
         {
             "name": "nikic/php-parser",
-            "version": "v4.15.4",
+            "version": "v5.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nikic/PHP-Parser.git",
-                "reference": "6bb5176bc4af8bcb7d926f88718db9b96a2d4290"
+                "reference": "139676794dc1e9231bf7bcd123cfc0c99182cb13"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/6bb5176bc4af8bcb7d926f88718db9b96a2d4290",
-                "reference": "6bb5176bc4af8bcb7d926f88718db9b96a2d4290",
+                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/139676794dc1e9231bf7bcd123cfc0c99182cb13",
+                "reference": "139676794dc1e9231bf7bcd123cfc0c99182cb13",
                 "shasum": ""
             },
             "require": {
+                "ext-ctype": "*",
+                "ext-json": "*",
                 "ext-tokenizer": "*",
-                "php": ">=7.0"
+                "php": ">=7.4"
             },
             "require-dev": {
                 "ircmaxell/php-yacc": "^0.0.7",
-                "phpunit/phpunit": "^6.5 || ^7.0 || ^8.0 || ^9.0"
+                "phpunit/phpunit": "^7.0 || ^8.0 || ^9.0"
             },
             "bin": [
                 "bin/php-parse"
@@ -163,7 +168,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "4.9-dev"
+                    "dev-master": "5.0-dev"
                 }
             },
             "autoload": {
@@ -187,9 +192,9 @@
             ],
             "support": {
                 "issues": "https://github.com/nikic/PHP-Parser/issues",
-                "source": "https://github.com/nikic/PHP-Parser/tree/v4.15.4"
+                "source": "https://github.com/nikic/PHP-Parser/tree/v5.0.2"
             },
-            "time": "2023-03-05T19:49:14+00:00"
+            "time": "2024-03-05T20:51:40+00:00"
         }
     ],
     "packages-dev": [],
