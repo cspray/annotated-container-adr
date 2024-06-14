@@ -4,6 +4,8 @@ namespace Cspray\AnnotatedContainer\ArchitecturalDecisionRecords;
 
 use Cspray\ArchitecturalDecision\DecisionStatus;
 use Cspray\ArchitecturalDecision\DocBlockArchitecturalDecision;
+use DateTimeImmutable;
+use DateTimeZone;
 use DOMElement;
 
 /**
@@ -35,15 +37,15 @@ use DOMElement;
 #[\Attribute(\Attribute::TARGET_CLASS)]
 final class DeprecateActiveProfilesInFavorOfConcreteValueObject extends DocBlockArchitecturalDecision {
 
-    public function getDate() : string {
-        return '2025-05-21';
+    public function date() : DateTimeImmutable {
+        return new DateTimeImmutable('2025-05-21', new DateTimeZone('America/New_York'));
     }
 
-    public function getStatus() : string|DecisionStatus {
+    public function status() : string|DecisionStatus {
         return DecisionStatus::Accepted;
     }
 
-    public function setMetaData(DOMElement $meta) : void {
+    public function addMetaData(DOMElement $meta) : void {
         AddAuthorMetadata::add(Author::charlesSprayberry(), $meta);
         AddDeprecationMetadata::add('2.3.0', '3.0.0', $meta);
     }

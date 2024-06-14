@@ -5,6 +5,7 @@ namespace Cspray\AnnotatedContainer\ArchitecturalDecisionRecords;
 use Attribute;
 use Cspray\ArchitecturalDecision\DecisionStatus;
 use Cspray\ArchitecturalDecision\DocBlockArchitecturalDecision;
+use DateTimeImmutable;
 use DOMElement;
 
 /**
@@ -25,15 +26,15 @@ use DOMElement;
  */
 #[Attribute(Attribute::TARGET_CLASS)]
 final class ConfigurationCannotBeAssignedProfiles extends DocBlockArchitecturalDecision {
-    public function getDate() : string {
-        return '2022-08-10';
+    public function date() : DateTimeImmutable {
+        return new DateTimeImmutable('2022-08-10', new \DateTimeZone('America/New_York'));
     }
 
-    public function getStatus() : DecisionStatus {
+    public function status() : DecisionStatus {
         return DecisionStatus::Superseded;
     }
 
-    public function setMetaData(DOMElement $meta) : void {
+    public function addMetaData(DOMElement $meta) : void {
         $dom = $meta->ownerDocument;
 
         $supersededNode = $dom->createElement('supersededBy');
