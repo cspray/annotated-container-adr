@@ -31,15 +31,15 @@ use DOMElement;
  */
 #[Attribute(Attribute::TARGET_CLASS | Attribute::TARGET_METHOD)]
 final class SingleEntrypointDefinitionProvider extends DocBlockArchitecturalDecision {
-    public function getDate() : string {
-        return '2022-07-19';
+    public function date() : \DateTimeImmutable {
+        return new \DateTimeImmutable('2022-07-19', new \DateTimeZone('America/New_York'));
     }
 
-    public function getStatus() : DecisionStatus {
+    public function status() : DecisionStatus {
         return DecisionStatus::Accepted;
     }
 
-    public function setMetaData(DOMElement $meta) : void {
+    public function addMetaData(DOMElement $meta) : void {
         AddAuthorMetadata::add(Author::charlesSprayberry(), $meta);
     }
 }

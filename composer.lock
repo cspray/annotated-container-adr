@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ef5730bd5510becec416f045c3c70624",
+    "content-hash": "7f4849b293b8d39d12de26abfb1d79ea",
     "packages": [
         {
             "name": "cspray/annotated-target",
@@ -58,21 +58,22 @@
         },
         {
             "name": "cspray/architectural-decision",
-            "version": "v1.4.0",
+            "version": "dev-release-2.x",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cspray/architectural-decision.git",
-                "reference": "6b10529def23faf30da88c74d5a5e78d4e315c0d"
+                "reference": "adf088c48a1f5476363b262ce193c204995e5078"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cspray/architectural-decision/zipball/6b10529def23faf30da88c74d5a5e78d4e315c0d",
-                "reference": "6b10529def23faf30da88c74d5a5e78d4e315c0d",
+                "url": "https://api.github.com/repos/cspray/architectural-decision/zipball/adf088c48a1f5476363b262ce193c204995e5078",
+                "reference": "adf088c48a1f5476363b262ce193c204995e5078",
                 "shasum": ""
             },
             "require": {
                 "cspray/annotated-target": "^1.1",
                 "ext-dom": "*",
+                "nikic/php-parser": "^4.18 || ^5.0",
                 "php": "^8.1"
             },
             "require-dev": {
@@ -100,9 +101,9 @@
             "description": "A library to keep track of architectural decisions with PHP annotations.",
             "support": {
                 "issues": "https://github.com/cspray/architectural-decision/issues",
-                "source": "https://github.com/cspray/architectural-decision/tree/v1.4.0"
+                "source": "https://github.com/cspray/architectural-decision/tree/release-2.x"
             },
-            "time": "2024-06-03T22:02:06+00:00"
+            "time": "2024-06-14T19:08:17+00:00"
         },
         {
             "name": "cspray/typiphy",
@@ -200,7 +201,9 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "cspray/architectural-decision": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
@@ -208,5 +211,5 @@
         "ext-dom": "*"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.2.0"
+    "plugin-api-version": "2.6.0"
 }
