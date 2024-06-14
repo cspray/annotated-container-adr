@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7f4849b293b8d39d12de26abfb1d79ea",
+    "content-hash": "25b7ced340f682af5c5dc6568154dbb1",
     "packages": [
         {
             "name": "cspray/annotated-target",
@@ -58,7 +58,7 @@
         },
         {
             "name": "cspray/architectural-decision",
-            "version": "dev-release-2.x",
+            "version": "v2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cspray/architectural-decision.git",
@@ -101,7 +101,7 @@
             "description": "A library to keep track of architectural decisions with PHP annotations.",
             "support": {
                 "issues": "https://github.com/cspray/architectural-decision/issues",
-                "source": "https://github.com/cspray/architectural-decision/tree/release-2.x"
+                "source": "https://github.com/cspray/architectural-decision/tree/v2.0.0"
             },
             "time": "2024-06-14T19:08:17+00:00"
         },
@@ -201,9 +201,7 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "cspray/architectural-decision": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
