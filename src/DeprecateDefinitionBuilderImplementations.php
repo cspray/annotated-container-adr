@@ -32,7 +32,7 @@ use DOMElement;
 final class DeprecateDefinitionBuilderImplementations extends DocBlockArchitecturalDecision {
 
     public function date() : DateTimeImmutable {
-        return new DateTimeImmutable('2024-12-14', new \DateTimeZone('America/New_York'));
+        return new DateTimeImmutable('2025-05-15', new \DateTimeZone('America/New_York'));
     }
 
     public function status() : string|DecisionStatus {
