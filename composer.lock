@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "25b7ced340f682af5c5dc6568154dbb1",
+    "content-hash": "ef5730bd5510becec416f045c3c70624",
     "packages": [
         {
             "name": "cspray/annotated-target",
@@ -58,16 +58,16 @@
         },
         {
             "name": "cspray/architectural-decision",
-            "version": "v2.0.0",
+            "version": "v1.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cspray/architectural-decision.git",
-                "reference": "adf088c48a1f5476363b262ce193c204995e5078"
+                "reference": "015c6e442405b08b00c67fe99a92740a72ef20c9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cspray/architectural-decision/zipball/adf088c48a1f5476363b262ce193c204995e5078",
-                "reference": "adf088c48a1f5476363b262ce193c204995e5078",
+                "url": "https://api.github.com/repos/cspray/architectural-decision/zipball/015c6e442405b08b00c67fe99a92740a72ef20c9",
+                "reference": "015c6e442405b08b00c67fe99a92740a72ef20c9",
                 "shasum": ""
             },
             "require": {
@@ -101,9 +101,9 @@
             "description": "A library to keep track of architectural decisions with PHP annotations.",
             "support": {
                 "issues": "https://github.com/cspray/architectural-decision/issues",
-                "source": "https://github.com/cspray/architectural-decision/tree/v2.0.0"
+                "source": "https://github.com/cspray/architectural-decision/tree/v1.4.1"
             },
-            "time": "2024-06-14T19:08:17+00:00"
+            "time": "2024-06-04T19:37:44+00:00"
         },
         {
             "name": "cspray/typiphy",

@@ -32,15 +32,15 @@ use DOMElement;
 #[Attribute(Attribute::TARGET_CLASS)]
 final class DeprecateDefinitionBuilderImplementations extends DocBlockArchitecturalDecision {
 
-    public function date() : DateTimeImmutable {
-        return new DateTimeImmutable('2025-05-15', new DateTimeZone('America/New_York'));
+    public function getDate() : string {
+        return '2025-05-15';
     }
 
-    public function status() : string|DecisionStatus {
+    public function getStatus() : string|DecisionStatus {
         return DecisionStatus::Accepted;
     }
 
-    public function addMetaData(DOMElement $meta) : void {
+    public function setMetaData(DOMElement $meta) : void {
         AddAuthorMetadata::add(Author::charlesSprayberry(), $meta);
         AddDeprecationMetadata::add('2.4.0', '3.0.0', $meta);
     }
