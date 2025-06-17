@@ -7,7 +7,6 @@ use Cspray\ArchitecturalDecision\DecisionStatus;
 use Cspray\ArchitecturalDecision\DocBlockArchitecturalDecision;
 use DateTimeImmutable;
 use DateTimeZone;
-use DOMElement;
 
 /**
  * # ServiceDelegate Implicitly Creates ServiceDefinition if necessary
@@ -30,15 +29,12 @@ use DOMElement;
 #[Attribute(Attribute::TARGET_CLASS)]
 final class ImplicitServiceCreationFromServiceDelegate extends DocBlockArchitecturalDecision {
 
-    public function date() : DateTimeImmutable {
-        return new DateTimeImmutable('2024-05-09', new DateTimeZone('America/New_York'));
+    public function __construct() {
+        parent::__construct(
+            new DateTimeImmutable('2024-05-09', new DateTimeZone('America/New_York')),
+            DecisionStatus::accepted(),
+            [Author::charlesSprayberry()],
+        );
     }
 
-    public function status() : string|DecisionStatus {
-        return DecisionStatus::Accepted;
-    }
-
-    public function addMetaData(DOMElement $meta) : void {
-        AddAuthorMetadata::add(Author::charlesSprayberry(), $meta);
-    }
 }

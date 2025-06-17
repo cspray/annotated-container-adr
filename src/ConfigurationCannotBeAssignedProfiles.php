@@ -3,10 +3,10 @@
 namespace Cspray\AnnotatedContainer\ArchitecturalDecisionRecords;
 
 use Attribute;
+use Cspray\ArchitecturalDecision\DecisionMetaData;
 use Cspray\ArchitecturalDecision\DecisionStatus;
 use Cspray\ArchitecturalDecision\DocBlockArchitecturalDecision;
 use DateTimeImmutable;
-use DOMElement;
 
 /**
  * # Configuration instances cannot be assigned profiles
@@ -26,21 +26,19 @@ use DOMElement;
  */
 #[Attribute(Attribute::TARGET_CLASS)]
 final class ConfigurationCannotBeAssignedProfiles extends DocBlockArchitecturalDecision {
-    public function date() : DateTimeImmutable {
-        return new DateTimeImmutable('2022-08-10', new \DateTimeZone('America/New_York'));
+
+    public function __construct() {
+        parent::__construct(
+            new DateTimeImmutable('2022-08-10', new \DateTimeZone('America/New_York')),
+            DecisionStatus::superseded(),
+            [Author::charlesSprayberry()],
+            [
+                DecisionMetaData::keyValue(
+                    'supersededBy',
+                    DeprecateConfigurationInFavorOfCustomServiceAttribute::class
+                )
+            ]
+        );
     }
 
-    public function status() : DecisionStatus {
-        return DecisionStatus::Superseded;
-    }
-
-    public function addMetaData(DOMElement $meta) : void {
-        $dom = $meta->ownerDocument;
-
-        $supersededNode = $dom->createElement('supersededBy');
-        $supersededNode->textContent = 'DeprecateConfigurationInFavorOfCustomServiceAttribute';
-
-        AddAuthorMetadata::add(Author::charlesSprayberry(), $meta);
-        $meta->append($supersededNode);
-    }
 }

@@ -3,11 +3,12 @@
 namespace Cspray\AnnotatedContainer\ArchitecturalDecisionRecords;
 
 use Attribute;
+use Cspray\ArchitecturalDecision\DecisionMetaData;
+use Cspray\ArchitecturalDecision\DecisionMetaDataProperty;
 use Cspray\ArchitecturalDecision\DecisionStatus;
 use Cspray\ArchitecturalDecision\DocBlockArchitecturalDecision;
 use DateTimeImmutable;
 use DateTimeZone;
-use DOMElement;
 
 /**
  * # Deprecate Observers for Events
@@ -36,16 +37,18 @@ use DOMElement;
 #[Attribute(Attribute::TARGET_CLASS)]
 final class DeprecateObserversInFavorOfEventSystem extends DocBlockArchitecturalDecision {
 
-    public function date() : DateTimeImmutable {
-        return new DateTimeImmutable('2024-05-15', new DateTimeZone('America/New_York'));
+    public function __construct() {
+        parent::__construct(
+            new DateTimeImmutable('2024-05-15', new DateTimeZone('America/New_York')),
+            DecisionStatus::accepted(),
+            [Author::charlesSprayberry()],
+            [
+                DecisionMetaData::keyValueWithProperties('deprecation', true, [
+                    DecisionMetaDataProperty::keyValue('since', '2.3.0'),
+                    DecisionMetaDataProperty::keyValue('scheduledForRemoval', '3.0.0'),
+                ])
+            ]
+        );
     }
 
-    public function status() : string|DecisionStatus {
-        return DecisionStatus::Accepted;
-    }
-
-    public function addMetaData(DOMElement $meta) : void {
-        AddAuthorMetadata::add(Author::charlesSprayberry(), $meta);
-        AddDeprecationMetadata::add('2.3.0', '3.0.0', $meta);
-    }
 }

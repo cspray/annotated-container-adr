@@ -5,7 +5,6 @@ namespace Cspray\AnnotatedContainer\ArchitecturalDecisionRecords;
 use Attribute;
 use Cspray\ArchitecturalDecision\DecisionStatus;
 use Cspray\ArchitecturalDecision\DocBlockArchitecturalDecision;
-use DOMElement;
 
 /**
  * # Allow Single Entrypoint for DefinitionProvider
@@ -31,15 +30,13 @@ use DOMElement;
  */
 #[Attribute(Attribute::TARGET_CLASS | Attribute::TARGET_METHOD)]
 final class SingleEntrypointDefinitionProvider extends DocBlockArchitecturalDecision {
-    public function date() : \DateTimeImmutable {
-        return new \DateTimeImmutable('2022-07-19', new \DateTimeZone('America/New_York'));
+
+    public function __construct() {
+        parent::__construct(
+            new \DateTimeImmutable('2022-07-19', new \DateTimeZone('America/New_York')),
+            DecisionStatus::accepted(),
+            [Author::charlesSprayberry()]
+        );
     }
 
-    public function status() : DecisionStatus {
-        return DecisionStatus::Accepted;
-    }
-
-    public function addMetaData(DOMElement $meta) : void {
-        AddAuthorMetadata::add(Author::charlesSprayberry(), $meta);
-    }
 }
